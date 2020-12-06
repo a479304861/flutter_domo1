@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../page/Demo3.dart';
+import '../page/ImageDemo.dart';
 
 
 main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home'),
+      home: MyHomePage(title: '我是标题'),
     );
   }
 }
