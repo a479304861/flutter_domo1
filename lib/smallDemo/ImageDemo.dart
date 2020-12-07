@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../main/main.dart';
 
-class MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(widget.title), iconTheme: IconThemeData()),
-      body: DataContent(),
-    );
-  }
-}
 
 class DataContent extends StatelessWidget {
   @override
