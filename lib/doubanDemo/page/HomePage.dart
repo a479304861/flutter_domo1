@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class HomePageWidgetState extends State<HomePage> {
   BaseResult response;
   void hello() {
-    Api.get("/v2/movie/top250").then((value) {
+    Api.get("/checkUser").then((value) {
       print(value);
     });
   }

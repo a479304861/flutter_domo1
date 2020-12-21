@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'dart:async';
 
+class DateTimeDemo extends StatefulWidget {
+  @override
+  _DateTimeDemoState createState() => _DateTimeDemoState();
+}
 
+class _DateTimeDemoState extends State<DateTimeDemo> {
+  DateTime selectedDate = DateTime.now();
+TimeOfDay selectedTime=TimeOfDay.now();
+  _selectDate() async {
+    final DateTime date = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2100),
+    );
+    if (date == null) return;
+    setState(() {
+      selectedDate = date;
+    });
+  }
 
-
-class TextSpanDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,25 +30,40 @@ class TextSpanDemo extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Container(
-              child: Text.rich(TextSpan(children: [
-                TextSpan(
-                    text: "定风波",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    )),
-                TextSpan(
-                    text: "苏轼",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    )),
-              ])),
+            InkWell(
+              onTap: _selectDate,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(DateFormat.yMd().format(selectedDate)),
+                  Icon(Icons.arrow_drop_down)
+                ],
+              ),
+            ),
+            InkWell(
+              onTap: _selectTime,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(selectedTime.format(context)),
+                  Icon(Icons.arrow_drop_down)
+                ],
+              ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _selectTime()async {
+    final TimeOfDay time= await showTimePicker(
+      context: context,
+      initialTime: selectedTime,
+    );
+    if(time==null)return;
+    setState(() {
+      selectedTime=time;
+    });
   }
 }

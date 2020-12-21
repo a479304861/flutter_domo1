@@ -4,7 +4,6 @@ import 'package:flutter_domo1/doubanDemo/page/MePage.dart';
 import 'package:flutter_domo1/doubanDemo/page/MusicPage.dart';
 import 'package:flutter_domo1/doubanDemo/page/SearchPage.dart';
 
-
 main() {
   runApp(MyApp());
 }
@@ -16,6 +15,9 @@ class MyApp extends StatelessWidget {
       title: "Flutter Demo", //多应用程序切换的标题
       theme: ThemeData(primarySwatch: Colors.green),
       home: MyStackPage(),
+      routes: {
+        "homePage": (content) => HomePage(),
+      },
     );
   }
 }
@@ -60,7 +62,12 @@ class MyStackPageState extends State<MyStackPage> {
         ),
         body: IndexedStack(
           index: _curIndex,
-          children: [HomePage(), SearchPage(), MusicPage(), MePage(),],
+          children: [
+            HomePage(),
+            SearchPage(),
+            MusicPage(),
+            MePage(),
+          ],
         ));
   }
 }
