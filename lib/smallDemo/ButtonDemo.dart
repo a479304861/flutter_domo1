@@ -1,47 +1,45 @@
 import 'package:flutter/material.dart';
 
-
-
-
 class ButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
-              onPressed: (){
+              onPressed: () {
                 print("RaisedButton");
               },
               child: Text("RaisedButton"),
             ),
             FlatButton(
-              onPressed: (){
+              onPressed: () {
                 print("FlatButton");
               },
               child: Text("FlatButton"),
-            ) ,
+            ),
             OutlineButton(
-              onPressed: (){
+              onPressed: () {
                 print("OutlineButton");
               },
               child: Text("OutlineButton"),
-            ) ,
+            ),
             FloatingActionButton(
-              onPressed: (){
+              onPressed: () {
                 print("FloatingActionButton");
               },
               child: Icon(Icons.add),
             ),
             RaisedButton(
-              onPressed: (){
+              onPressed: () {
                 print("RaisedButton");
               },
               child: Text("RaisedButton"),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5)
-              ),
+                  borderRadius: BorderRadius.circular(5)),
             ),
           ],
         ),

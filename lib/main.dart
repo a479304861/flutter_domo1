@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
+import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextSpanDemo.dart';
 import 'smallDemo/FormFieldDemo.dart';
@@ -52,4 +54,6 @@ Map<String, WidgetBuilder> routers = {
   "TextFieldDemo": (BuildContext content) => TextFieldDemo(),
   "TextSpanDemo": (BuildContext content) => TextSpanDemo(),
   "DateTimeDemo": (BuildContext content) => DateTimeDemo(),
+  "ButtonDemo": (BuildContext content) => ButtonDemo(),
+  "StreamDemo": (BuildContext content) => StreamDemo(),
 };
