@@ -18,6 +18,7 @@ dependencies:
   json_annotation: ^3.0.0
   analyzer: '0.39.14'
   intl: 0.15.7
+  rxdart: 0.18.1
 
 
 dev_dependencies:

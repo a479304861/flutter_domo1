@@ -6,6 +6,7 @@ import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
 import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextSpanDemo.dart';
+import 'package:flutter_domo1/smallDemo/rxdartDemo.dart';
 import 'smallDemo/FormFieldDemo.dart';
 
 main() {
@@ -56,4 +57,5 @@ Map<String, WidgetBuilder> routers = {
   "DateTimeDemo": (BuildContext content) => DateTimeDemo(),
   "ButtonDemo": (BuildContext content) => ButtonDemo(),
   "StreamDemo": (BuildContext content) => StreamDemo(),
+  "rxdartDemo": (BuildContext content) => rxDartDemo(),
 };
