@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
+import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
 import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextSpanDemo.dart';
+import 'package:flutter_domo1/smallDemo/custom_router.dart';
 import 'package:flutter_domo1/smallDemo/rxdartDemo.dart';
+import 'package:flutter_domo1/smallDemo/searchDemo.dart';
 import 'smallDemo/FormFieldDemo.dart';
 
 main() {
@@ -60,4 +63,7 @@ Map<String, WidgetBuilder> routers = {
   "StreamDemo": (BuildContext content) => StreamDemo(),
   "rxdartDemo": (BuildContext content) => rxDartDemo(),
   "BlocDemo": (BuildContext content) => BlocDemo(),
+  "FirstPage": (BuildContext content) => FirstPage(),
+  "MainScreen": (BuildContext content) => MainScreen(),
+  "SearchDemo": (BuildContext content) => SearchDemo(),
 };
