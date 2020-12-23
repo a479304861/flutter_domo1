@@ -18,10 +18,10 @@ class FirstPage extends StatelessWidget {
               RaisedButton(
                   child: Text("to second"),
                   onPressed: () {
-                    // Navigator.of(context).push(
-                    //     CustomRoute(oldWidget: this, newWidget: SecondPage()));
-                    Navigator.of(context).push(RippleRoute(
-                        SecondPage(), RouteConfig.fromContext(context)));
+                    Navigator.of(context)
+                        .push(CustomRoute(newWidget: SecondPage()));
+                    // Navigator.of(context).push(RippleRoute(
+                    //     SecondPage(), RouteConfig.fromContext(context)));
                   })
             ],
           ),
@@ -59,9 +59,8 @@ class SecondPage extends StatelessWidget {
 
 class CustomRoute extends PageRouteBuilder {
   final Widget newWidget;
-  final Animation<double> animation;
 
-  CustomRoute({@required this.animation, @required this.newWidget})
+  CustomRoute({@required this.newWidget})
       : super(
             transitionDuration: Duration(seconds: 1),
             transitionsBuilder: _transitionsBuilder1,
@@ -72,43 +71,59 @@ class CustomRoute extends PageRouteBuilder {
 
   static Widget _transitionsBuilder1(
       BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
+      Animation<double> primaryRouteAnimation,
+      Animation<double> secondaryRouteAnimation,
       Widget child) {
     //渐隐
-    // return FadeTransition(
-    //   opacity: Tween(begin: 0.0, end: 1.0).animate(
-    //       CurvedAnimation(parent: animation,curve:  Curves.fastOutSlowIn)),
-    //   child: child,
-    // );
+    // return getFade(primaryRouteAnimation, child);
 
     //旋转
-    // return ScaleTransition(
-    //   scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-    //       parent: animation,
-    //       curve: Curves.bounceInOut
-    //   )),
-    //   child: child,
-    // );
+    // return getScale(primaryRouteAnimation, child);
 
     //旋转缩放
-    // return RotationTransition(
-    //   turns: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-    //       parent: animation, curve: Curves.fastOutSlowIn)),
-    //   child: ScaleTransition(
-    //     scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-    //         parent: animation, curve: Curves.fastOutSlowIn)),
-    //     child: child,
-    //   ),
-    // );
+    // return getRotation(primaryRouteAnimation, child);
 
     return SlideTransition(
       position: Tween<Offset>(begin: Offset(1, 0.0), end: Offset(0, 0.0))
-          .animate(CurvedAnimation(parent: animation, curve: Curves.linear)),
+          .animate(CurvedAnimation(
+              parent: primaryRouteAnimation, curve: Curves.linear)),
+      child: child,
+    );
+
+  }
+
+  static FadeTransition getFade(
+      Animation<double> primaryRouteAnimation, Widget child) {
+    return FadeTransition(
+      opacity: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: primaryRouteAnimation, curve: Curves.fastOutSlowIn)),
       child: child,
     );
   }
+
+  static ScaleTransition getScale(
+      Animation<double> primaryRouteAnimation, Widget child) {
+    return ScaleTransition(
+      scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: primaryRouteAnimation, curve: Curves.bounceInOut)),
+      child: child,
+    );
+  }
+
+  static RotationTransition getRotation(
+      Animation<double> primaryRouteAnimation, Widget child) {
+    return RotationTransition(
+      turns: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+          parent: primaryRouteAnimation, curve: Curves.fastOutSlowIn)),
+      child: ScaleTransition(
+        scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: primaryRouteAnimation, curve: Curves.fastOutSlowIn)),
+        child: child,
+      ),
+    );
+  }
 }
+
 
 class RouteConfig {
   Offset offset;

@@ -7,6 +7,7 @@ import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
+import 'package:flutter_domo1/smallDemo/RightBackDemo.dart';
 import 'package:flutter_domo1/smallDemo/SplashScreen.dart';
 import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
@@ -82,4 +83,5 @@ Map<String, WidgetBuilder> routers = {
   "WarpDemo": (BuildContext content) => WrapDemo(),
   "ExpansionTileDemo": (BuildContext content) => ExpansionTileDemo(),
   "BSCurve": (BuildContext content) => BSCurve(),
+  "RightBackDemo": (BuildContext content) => RightBackDemo(),
 };

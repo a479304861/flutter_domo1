@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
 
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
     _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
