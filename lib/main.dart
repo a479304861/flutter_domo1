@@ -8,6 +8,7 @@ import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
 import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextSpanDemo.dart';
+import 'package:flutter_domo1/smallDemo/WarpDemo.dart';
 import 'package:flutter_domo1/smallDemo/custom_router.dart';
 import 'package:flutter_domo1/smallDemo/rxdartDemo.dart';
 import 'package:flutter_domo1/smallDemo/searchDemo.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Flutter Demo", //多应用程序切换的标题
       theme: ThemeData(primarySwatch: Colors.green),
       home: MyStackPage(),
@@ -66,4 +68,5 @@ Map<String, WidgetBuilder> routers = {
   "FirstPage": (BuildContext content) => FirstPage(),
   "MainScreen": (BuildContext content) => MainScreen(),
   "SearchDemo": (BuildContext content) => SearchDemo(),
+  "WarpDemo": (BuildContext content) => WrapDemo(),
 };
