@@ -24,7 +24,10 @@ dependencies:
   photo: 0.4.8
   camera: ^0.6.2+1
   path_provider: 1.6.24
-  barcode_scan: 3.0.1
+  barcode_scan: ^3.0.1
+  alipay_me: ^1.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
