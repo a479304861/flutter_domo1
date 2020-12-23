@@ -3,6 +3,7 @@ import 'package:flutter_domo1/smallDemo/BSCurve.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
+import 'package:flutter_domo1/smallDemo/DraggableDemo.dart';
 import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
@@ -87,4 +88,5 @@ Map<String, WidgetBuilder> routers = {
   "BSCurve": (BuildContext content) => BSCurve(),
   "RightBackDemo": (BuildContext content) => RightBackDemo(),
   "TooltipDemo": (BuildContext content) => TooltipDemo(),
+  "DraggableDemo": (BuildContext content) => DraggableDemo(),
 };
