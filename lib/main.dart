@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
+import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
@@ -69,4 +70,5 @@ Map<String, WidgetBuilder> routers = {
   "MainScreen": (BuildContext content) => MainScreen(),
   "SearchDemo": (BuildContext content) => SearchDemo(),
   "WarpDemo": (BuildContext content) => WrapDemo(),
+  "ExpansionTileDemo": (BuildContext content) => ExpansionTileDemo(),
 };
