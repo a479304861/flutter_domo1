@@ -20,6 +20,7 @@ class _BSCurveState extends State<BSCurve> {
             ),
             ClipRRect(
               clipper: MyRRctClipper(),
+              // borderRadius: BorderRadius.circular(5),
               child: Container(height: 300, color: Colors.red),
             ),
             ClipOval(

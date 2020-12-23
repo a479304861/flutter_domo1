@@ -7,13 +7,15 @@ import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
+import 'package:flutter_domo1/smallDemo/SplashScreen.dart';
 import 'package:flutter_domo1/smallDemo/StreamDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextFieldDemo.dart';
 import 'package:flutter_domo1/smallDemo/TextSpanDemo.dart';
 import 'package:flutter_domo1/smallDemo/WarpDemo.dart';
-import 'package:flutter_domo1/smallDemo/custom_router.dart';
-import 'package:flutter_domo1/smallDemo/rxdartDemo.dart';
-import 'package:flutter_domo1/smallDemo/searchDemo.dart';
+import 'package:flutter_domo1/smallDemo/Custom_router.dart';
+import 'package:flutter_domo1/smallDemo/RxdartDemo.dart';
+import 'package:flutter_domo1/smallDemo/SearchDemo.dart';
+import 'Channel/Android_back.dart';
 import 'smallDemo/FormFieldDemo.dart';
 
 main() {
@@ -25,34 +27,41 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Flutter Demo", //多应用程序切换的标题
+      title: "Flutter Demo",
+      //多应用程序切换的标题
       theme: ThemeData(primarySwatch: Colors.green),
-      home: MyStackPage(),
+      home: SplashScreen(),
       routes: routers,
     );
   }
 }
 
-class MyStackPage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyStackPageState();
+    return HomePageState();
   }
 }
 
-class MyStackPageState extends State<MyStackPage> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView.builder(
-            itemCount: routers.length,
-            itemBuilder: (BuildContext context, int index) {
-              return RaisedButton(
-                child: Text(routers.keys.elementAt(index)),
-                onPressed: () =>
-                    Navigator.pushNamed(context, routers.keys.elementAt(index)),
-              );
-            }));
+    return WillPopScope(
+      onWillPop: () async {
+        AndroidBackTop.backDeskTop(); //设置为返回不退出app
+        return false;
+      },
+      child: Scaffold(
+          body: ListView.builder(
+              itemCount: routers.length,
+              itemBuilder: (BuildContext context, int index) {
+                return RaisedButton(
+                  child: Text(routers.keys.elementAt(index)),
+                  onPressed: () => Navigator.pushNamed(
+                      context, routers.keys.elementAt(index)),
+                );
+              })),
+    );
   }
 }
 
