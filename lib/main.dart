@@ -4,7 +4,7 @@ import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
 import 'package:flutter_domo1/smallDemo/DefaultTabControllerDemo.dart';
-import 'package:flutter_domo1/smallDemo/DraggableDemo.dart';
+import 'package:flutter_domo1/smallDemo/EasyLoading.dart';
 import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
@@ -19,6 +19,7 @@ import 'package:flutter_domo1/smallDemo/WarpDemo.dart';
 import 'package:flutter_domo1/smallDemo/Custom_router.dart';
 import 'package:flutter_domo1/smallDemo/RxdartDemo.dart';
 import 'package:flutter_domo1/smallDemo/SearchDemo.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'Channel/Android_back.dart';
 import 'smallDemo/FormFieldDemo.dart';
 
@@ -30,13 +31,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
       //多应用程序切换的标题
       theme: ThemeData(primarySwatch: Colors.green),
       home: SplashScreen(),
       routes: routers,
+      builder: EasyLoading.init(),
     );
   }
 }
@@ -82,12 +83,13 @@ Map<String, WidgetBuilder> routers = {
   "rxdartDemo": (BuildContext content) => rxDartDemo(),
   "BlocDemo": (BuildContext content) => BlocDemo(),
   "FirstPage": (BuildContext content) => FirstPage(),
-  "MainScreen": (BuildContext content) => MainScreen(),
+  "HeroDemo": (BuildContext content) => HeroDemo(),
   "SearchDemo": (BuildContext content) => SearchDemo(),
   "WarpDemo": (BuildContext content) => WrapDemo(),
   "ExpansionTileDemo": (BuildContext content) => ExpansionTileDemo(),
   "BSCurve": (BuildContext content) => BSCurve(),
   "RightBackDemo": (BuildContext content) => RightBackDemo(),
   "TooltipDemo": (BuildContext content) => TooltipDemo(),
-  "DefaultTabControllerDemo": (BuildContext content) => DefaultTabControllerDemo(),
+  "TabControllerDemo": (BuildContext content) => DefaultTabControllerDemo(),
+  "EasyLoadingDemo": (BuildContext content) => EasyLoadingDemo(),
 };

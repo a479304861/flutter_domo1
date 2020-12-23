@@ -7,12 +7,12 @@ class HeroApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Transition Demo',
-      home: MainScreen(),
+      home: HeroDemo(),
     );
   }
 }
 
-class MainScreen extends StatelessWidget {
+class HeroDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
