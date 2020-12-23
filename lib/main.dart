@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_domo1/smallDemo/BSCurve.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
@@ -71,4 +72,5 @@ Map<String, WidgetBuilder> routers = {
   "SearchDemo": (BuildContext content) => SearchDemo(),
   "WarpDemo": (BuildContext content) => WrapDemo(),
   "ExpansionTileDemo": (BuildContext content) => ExpansionTileDemo(),
+  "BSCurve": (BuildContext content) => BSCurve(),
 };
