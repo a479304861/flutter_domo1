@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_domo1/smallDemo/BSCurve.dart';
+import 'package:flutter_domo1/smallDemo/BarcodeScanDemo.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/CameraPhotoDemo.dart';
@@ -101,4 +102,5 @@ Map<String, WidgetBuilder> routers = {
   "EasyLoadingDemo": (BuildContext content) => EasyLoadingDemo(),
   "CameraPhotoDemo": (BuildContext content) => CameraPhotoDemo(),
   "PathProvider": (BuildContext content) => PathProvider(),
+  "BarcodeScanDemo": (BuildContext content) => BarcodeScanDemo(),
 };
