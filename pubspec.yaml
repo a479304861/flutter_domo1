@@ -19,7 +19,7 @@ dependencies:
   analyzer: '0.39.14'
   intl: 0.15.7
   rxdart: 0.18.1
-
+  toast: ^0.1.5
 
 dev_dependencies:
   flutter_test:
