@@ -5,6 +5,7 @@ import 'package:flutter_domo1/smallDemo/BarcodeScanDemo.dart';
 import 'package:flutter_domo1/smallDemo/BlocDemo.dart';
 import 'package:flutter_domo1/smallDemo/ButtonDemo.dart';
 import 'package:flutter_domo1/smallDemo/CameraPhotoDemo.dart';
+import 'package:flutter_domo1/smallDemo/ChartDemo.dart';
 import 'package:flutter_domo1/smallDemo/DateTimeDemo.dart';
 import 'package:flutter_domo1/smallDemo/DefaultTabControllerDemo.dart';
 import 'package:flutter_domo1/smallDemo/EasyLoading.dart';
@@ -23,6 +24,7 @@ import 'package:flutter_domo1/smallDemo/WarpDemo.dart';
 import 'package:flutter_domo1/smallDemo/Custom_router.dart';
 import 'package:flutter_domo1/smallDemo/RxdartDemo.dart';
 import 'package:flutter_domo1/smallDemo/SearchDemo.dart';
+import 'package:flutter_domo1/smallDemo/provider/ProviderDemo.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'Channel/Android_back.dart';
 import 'smallDemo/FormFieldDemo.dart';
@@ -103,4 +105,6 @@ Map<String, WidgetBuilder> routers = {
   "CameraPhotoDemo": (BuildContext content) => CameraPhotoDemo(),
   "PathProvider": (BuildContext content) => PathProvider(),
   "BarcodeScanDemo": (BuildContext content) => BarcodeScanDemo(),
+  "ChartDemo": (BuildContext content) => ChartDemo(),
+  "ProviderDemo": (BuildContext content) => ProviderDemo(),
 };
