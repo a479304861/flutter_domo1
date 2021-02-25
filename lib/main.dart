@@ -12,6 +12,7 @@ import 'package:flutter_domo1/smallDemo/EasyLoading.dart';
 import 'package:flutter_domo1/smallDemo/ExpansionTileDemo.dart';
 import 'package:flutter_domo1/smallDemo/HeroDemo.dart';
 import 'package:flutter_domo1/smallDemo/ImageDemo.dart';
+import 'package:flutter_domo1/smallDemo/LayoutDemo.dart';
 import 'package:flutter_domo1/smallDemo/ListViewDemo.dart';
 import 'package:flutter_domo1/smallDemo/PathProvider.dart';
 import 'package:flutter_domo1/smallDemo/RightBackDemo.dart';
@@ -28,10 +29,9 @@ import 'package:flutter_domo1/smallDemo/provider/ProviderDemo.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'Channel/Android_back.dart';
 import 'smallDemo/FormFieldDemo.dart';
+import 'smallDemo/CustomMultiChildLayoutDemo.dart';
 
-
-
-main() async{
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
   runApp(MyApp());
@@ -107,4 +107,7 @@ Map<String, WidgetBuilder> routers = {
   "BarcodeScanDemo": (BuildContext content) => BarcodeScanDemo(),
   "ChartDemo": (BuildContext content) => ChartDemo(),
   "ProviderDemo": (BuildContext content) => ProviderDemo(),
+  "CustomMultiChildLayout": (BuildContext content) =>
+      CustomMultiChildLayoutDemo(),
+  "LayoutDemo": (BuildContext content) => LayoutDemo(),
 };
