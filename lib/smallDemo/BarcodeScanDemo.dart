@@ -18,9 +18,10 @@ class _BarcodeScanDemoState extends State<BarcodeScanDemo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
-              onPressed: () async {
+              onPressed: () async{
                 var result = await BarcodeScanner.scan();
-                print(result.type); //  type (barcode, cancelled, failed)
+
+                print(result.type); // The result type (barcode, cancelled, failed)
                 print(result.rawContent); // The barcode content
                 print(result.format); // The barcode format (as enum)
                 print(result.formatNote);
